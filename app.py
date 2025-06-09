@@ -1,4 +1,5 @@
 import flask
+from flask_cors import CORS
 import pickle
 import pandas as pd
 import numpy as np
@@ -6,6 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 import os
 
 app = flask.Flask(__name__)
+CORS(app)
 
 # --- Load model and data --- 
 MODEL_PATH = os.path.join('Models', 'Back_up', 'svc_model.pkl')

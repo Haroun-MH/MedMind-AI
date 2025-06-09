@@ -132,3 +132,21 @@ The API currently exposes one main endpoint for disease prediction.
             "unknown_symptoms_provided": [] 
         }
         ```
+
+## AI Model Overview
+
+The MedMind API utilizes a machine learning model to predict diseases based on user-provided symptoms. The model was trained on a comprehensive dataset (`Training.csv`) containing various symptoms and their corresponding disease prognoses. The core of this system is a classification model that learns the intricate relationships between symptoms and diseases.
+
+### Model Training and Evaluation
+
+During the development phase, several machine learning algorithms were evaluated to determine the most suitable model for accurate disease prediction. The models considered included:
+
+*   **Support Vector Classifier (SVC):** A powerful and versatile algorithm capable of performing linear or non-linear classification.
+*   **Random Forest Classifier:** An ensemble learning method that operates by constructing a multitude of decision trees during training and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+*   **Multinomial Naive Bayes:** A probabilistic classifier suitable for classification with discrete features (e.g., word counts for text classification, or in this case, presence/absence of symptoms).
+
+Each model was trained on the preprocessed symptom data and evaluated based on standard classification metrics such as accuracy, precision, recall, and F1-score. The goal was to identify a model that not only achieved high predictive accuracy but also demonstrated robust generalization capabilities to new, unseen symptom combinations.
+
+### Why Support Vector Classifier (SVC) Was Chosen
+
+After thorough evaluation, the **Support Vector Classifier (SVC)** was selected as the primary model for the MedMind API. The decision was based on its superior performance across key evaluation metrics, indicating its effectiveness in accurately classifying diseases from symptom inputs. SVC models are known for their strong generalization ability and effectiveness in high-dimensional spaces, which is beneficial given the numerous symptoms considered. While other models like Random Forest and Multinomial Naive Bayes also performed well, SVC consistently demonstrated a better balance of accuracy and reliability for this specific medical prediction task.
